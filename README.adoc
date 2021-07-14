@@ -1,0 +1,3 @@
+= Showcase for microstream based on helidon
+
+This project holds examples for different types of architecture testing.
