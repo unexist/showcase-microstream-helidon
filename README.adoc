@@ -1,3 +1,15 @@
 = Showcase for microstream based on helidon
 
 This project holds examples for different types of architecture testing.
+
+== Problems
+
+[source]
+----
+loop failed helidon-cli-maven-plugin must be configured as an extension"
+----
+
+[source,xml]
+----
+<extensions>true</extensions>
+----
