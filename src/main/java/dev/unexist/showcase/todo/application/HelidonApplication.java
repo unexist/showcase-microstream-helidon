@@ -1,24 +1,17 @@
+/**
+ * @package Showcase-Microstream-Helidon
+ *
+ * @file Helidon application class
+ * @copyright 2020-2021 Christoph Kappel <christoph@unexist.dev>
+ * @version $Id$
+ *
+ * This program can be distributed under the terms of the GNU GPLv3.
+ * See the file LICENSE for details.
+ **/
+
 package dev.unexist.showcase.todo.application;
 
-import dev.unexist.showcase.todo.adapter.TodoResource;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
-@ApplicationScoped
-@ApplicationPath("/")
 public class HelidonApplication extends Application {
-
-    @Override
-    public Set<Class<?>> getClasses() {
-        Set<Class<?>> set = new HashSet<>();
-
-        set.add(TodoResource.class);
-
-        return Collections.unmodifiableSet(set);
-    }
 }

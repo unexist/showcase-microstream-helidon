@@ -11,4 +11,9 @@
         <artifactId>helidon-parent</artifactId>
         <version>0.1</version>
     </parent>
+
+    <properties>
+<!--        <mainClass>dev.unexist.showcase.todo.application.Main</mainClass>-->
+        <mainClass>io.helidon.microprofile.cdi.Main</mainClass>
+    </properties>
 </project>
