@@ -11,10 +11,12 @@
 
 package dev.unexist.showcase.todo.application;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
+@Disabled
 public class TodoResourceTest {
 
     @Test
