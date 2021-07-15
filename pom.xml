@@ -15,23 +15,18 @@
 
     <properties>
         <h2.version>1.4.200</h2.version>
+        <microstream.version>04.01.00-MS-GA</microstream.version>
     </properties>
 
+    <!-- Microstream -->
+    <repositories>
+        <repository>
+            <id>microstream-releases</id>
+            <url>https://repo.microstream.one/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
-
-        <dependency>
-            <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.inject</groupId>
-            <artifactId>jakarta.inject-api</artifactId>
-        </dependency>
-
         <!-- Helidon -->
         <dependency>
             <groupId>io.helidon.integrations.cdi</groupId>
@@ -48,6 +43,18 @@
         <dependency>
             <groupId>io.helidon.integrations.cdi</groupId>
             <artifactId>helidon-integrations-cdi-hibernate</artifactId>
+        </dependency>
+
+        <!-- Microstream -->
+        <dependency>
+            <groupId>one.microstream</groupId>
+            <artifactId>storage.embedded</artifactId>
+            <version>${microstream.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>one.microstream</groupId>
+            <artifactId>storage.embedded.configuration</artifactId>
+            <version>${microstream.version}</version>
         </dependency>
 
         <!-- Database -->
