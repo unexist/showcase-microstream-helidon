@@ -4,12 +4,73 @@ This project holds examples for different types of architecture testing.
 
 == Problems
 
+.Problem: Helidon-cli cannot start
 [source]
 ----
 loop failed helidon-cli-maven-plugin must be configured as an extension"
 ----
 
+.Solution: Add following to the plugin configuration of **helidon-cli-maven-plugin**:
 [source,xml]
 ----
-<extensions>true</extensions>
+<plugin>
+    <groupId>io.helidon.build-tools</groupId>
+    <artifactId>helidon-cli-maven-plugin</artifactId>
+    <version>${helidon-cli-plugin.version}</version>
+    <extensions>true</extensions>
+</plugin
+----
+
+.Problem: No beans are found
+[source]
+----
+There are no JAX-RS applications or resources. Maybe you forgot META-INF/beans.xml file?"
+----
+
+.Solution: Configure jandex properly
+[source,xml]
+----
+<plugin>
+    <groupId>org.jboss.jandex</groupId>
+    <artifactId>jandex-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>make-index</id>
+            <goals>
+                <goal>jandex</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+----
+
+.Problem: Helidon doesn't find classes annotated with @ApplicationScoped or @Path and ignores
+`microprofile-config.properties`.
+[source]
+----
+No handler found for path: /todo
+----
+
+.Solution: Also import helidon-bom
+[source,xml]
+----
+<dependencyManagement>
+    <dependencies>
+        <!-- Helidon -->
+        <dependency>
+            <groupId>io.helidon</groupId>
+            <artifactId>helidon-bom</artifactId>
+            <version>${helidon.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon</groupId>
+            <artifactId>helidon-dependencies</artifactId>
+            <version>${helidon.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement
 ----
