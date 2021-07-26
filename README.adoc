@@ -1,10 +1,29 @@
 = Showcase for microstream based on helidon
 
-This project holds examples for different types of architecture testing.
+This project holds an example for Microstream based on Helidon.
+
+== Links
+
+- https://helidon.io/
+- https://microstream.one/
 
 == Problems
 
-.Problem: Helidon-cli cannot start
+.Problem: Helidon-cli cannot start 1
+[source]
+----
+Helidon project is not supported: The required 'mainClass' property is missing.
+----
+
+.Solution: Set following property in your **pom.xml**:
+[source,xml]
+----
+<properties>
+    <mainClass>io.helidon.microprofile.cdi.Main</mainClass>
+</properties>
+----
+
+.Problem: Helidon-cli cannot start 2
 [source]
 ----
 loop failed helidon-cli-maven-plugin must be configured as an extension"
@@ -72,5 +91,5 @@ No handler found for path: /todo
             <scope>import</scope>
         </dependency>
     </dependencies>
-</dependencyManagement
+</dependencyManagement>
 ----
