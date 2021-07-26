@@ -38,16 +38,34 @@ public class MicrostreamTodoRepository implements TodoRepository {
     public boolean add(Todo todo) {
         DataRoot dataRoot = (DataRoot)this.storageManager.root();
 
+        todo.setId(dataRoot.list.get().size() + 1);
+
         return dataRoot.add(todo);
     }
 
     @Override
     public boolean update(Todo todo) {
-        return false;
+        boolean ret = false;
+
+        try {
+            DataRoot dataRoot = (DataRoot)this.storageManager.root();
+
+            dataRoot.list.get().set(todo.getId(), todo);
+
+            ret = true;
+        } catch (IndexOutOfBoundsException e) {
+            LOGGER.warn("update: id={} not found", todo.getId());
+        }
+
+        return ret;
     }
 
     @Override
     public boolean deleteById(int id) {
+        DataRoot dataRoot = (DataRoot)this.storageManager.root();
+
+        dataRoot.list.get().removeIf(t -> t.getId() == id);
+
         return false;
     }
 
@@ -60,7 +78,11 @@ public class MicrostreamTodoRepository implements TodoRepository {
 
     @Override
     public Optional<Todo> findById(int id) {
-        return Optional.empty();
+        DataRoot dataRoot = (DataRoot)this.storageManager.root();
+
+        return dataRoot.list.get().stream()
+                .filter(t -> t.getId() == id)
+                .findAny();
     }
 
     private static class DataRoot {
