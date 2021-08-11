@@ -22,6 +22,10 @@ public class MicrostreamTodoRepository implements TodoRepository {
 
     final EmbeddedStorageManager storageManager;
 
+    /**
+     * Constructor
+     **/
+
     MicrostreamTodoRepository() {
         DataRoot dataRoot = new DataRoot();
 
