@@ -14,28 +14,28 @@
     </parent>
 
     <properties>
-        <h2.version>1.4.200</h2.version>
         <microstream.version>05.00.02-MS-GA</microstream.version>
+        <h2.version>1.4.200</h2.version>
     </properties>
 
     <dependencies>
         <!-- Helidon -->
-        <dependency>
-            <groupId>io.helidon.integrations.cdi</groupId>
-            <artifactId>helidon-integrations-cdi-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.integrations.cdi</groupId>
-            <artifactId>helidon-integrations-cdi-jta-weld</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.integrations.cdi</groupId>
-            <artifactId>helidon-integrations-cdi-datasource-hikaricp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.integrations.cdi</groupId>
-            <artifactId>helidon-integrations-cdi-hibernate</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.helidon.integrations.cdi</groupId>-->
+<!--            <artifactId>helidon-integrations-cdi-jpa</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.helidon.integrations.cdi</groupId>-->
+<!--            <artifactId>helidon-integrations-cdi-jta-weld</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.helidon.integrations.cdi</groupId>-->
+<!--            <artifactId>helidon-integrations-cdi-datasource-hikaricp</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.helidon.integrations.cdi</groupId>-->
+<!--            <artifactId>helidon-integrations-cdi-hibernate</artifactId>-->
+<!--        </dependency>-->
 
         <!-- Microstream -->
         <dependency>
@@ -50,10 +50,10 @@
         </dependency>
 
         <!-- Database -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.h2database</groupId>-->
+<!--            <artifactId>h2</artifactId>-->
+<!--            <version>${h2.version}</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>
